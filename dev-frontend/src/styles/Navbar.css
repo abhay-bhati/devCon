@@ -1,0 +1,36 @@
+.navbar {
+  display: flex;
+  background-color: rgb(88, 85, 85);
+  justify-content: space-around;
+  padding: 18px;
+}
+.navbar__main,
+.navbar__account {
+  display: flex;
+}
+.navbar__main > a > div,
+.navbar__account > a > div {
+  margin: 0px 10px;
+  color: rgb(223, 210, 210);
+  font-weight: 500;
+}
+.navbar__main > a,
+.navbar__account > a {
+  text-decoration: none;
+}
+.navbar__account div {
+  color: rgb(223, 210, 210);
+}
+.navbar__account button {
+  text-decoration: none;
+  background: none;
+  border: none;
+  margin: 0px 10px;
+  color: rgb(223, 210, 210);
+  font-weight: 500;
+  font-size: 16px;
+  cursor: pointer;
+}
+.navbar__account__user {
+  margin-left: 30px;
+}

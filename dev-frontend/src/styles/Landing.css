@@ -1,0 +1,23 @@
+.landing {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  color: rgb(226, 223, 223);
+  background: url("../images/laptop-336373_1920.jpg") no-repeat;
+  height: 680px;
+}
+.landing > h1 {
+  margin: 10px;
+  margin-top: 60px;
+  font-size: 70px;
+  font-weight: 400;
+}
+.landing > p {
+  margin-bottom: 20px;
+}
+.landing__signup {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  margin-bottom: 200px;
+}

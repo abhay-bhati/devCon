@@ -1,0 +1,79 @@
+.dashboard {
+  margin-left: 60px;
+  margin-top: 50px;
+}
+.dashboard__links {
+  display: flex;
+  margin-top: 25px;
+  margin-left: 40px;
+}
+.dashboard__links > a {
+  text-decoration: none;
+}
+.dashboard__links > a > div {
+  background-color: rgb(226, 223, 223);
+  width: 150px;
+  padding: 15px;
+  margin: 10px;
+  margin-right: 10px;
+  margin-left: 20px;
+  text-align: center;
+  border-radius: 7px;
+  box-shadow: 3px 3px 3px gray;
+  color: black;
+}
+.dashboard h2 {
+  margin-left: 20px;
+  font-size: 50px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+.dashboard h5 {
+  margin-left: 20px;
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+.dashboard__links__text {
+  margin-left: 10px;
+}
+.dashboard__links__icon {
+  color: #00b8e6;
+}
+
+.dashboard__exp {
+  margin: 30px;
+  margin-bottom: 70px;
+}
+.dashboard__edu {
+  margin: 30px;
+}
+
+.dashboard__exp__head {
+  display: flex;
+  align-items: center;
+}
+.dashboard__exp__row1 {
+  display: flex;
+  align-items: center;
+}
+.dashboard__exp__row2 {
+  display: flex;
+  align-items: center;
+}
+.dashboard__exp__head > div {
+  flex: 0.25;
+  margin: 20px;
+}
+.dashboard__exp__row1 > div {
+  flex: 0.25;
+  margin: 20px;
+}
+.dashboard__exp__row2 > div {
+  flex: 0.25;
+  margin: 20px;
+}
+.dashboard__line {
+  background-color: rgb(238, 235, 235);
+  height: 1px;
+  width: 89%;
+}

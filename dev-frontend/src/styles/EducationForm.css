@@ -1,0 +1,24 @@
+.educationform {
+  background-color: gray;
+  text-align: center;
+  margin-top: 40px;
+  padding-top: 50px;
+  padding-bottom: 40px;
+}
+.educationform > div {
+  padding: 7px;
+}
+.educationform > div > input {
+  padding: 10px;
+  width: 350px;
+}
+.educationform__current {
+  background-color: white;
+  width: 358px;
+  margin: 5px auto;
+}
+.educationform__current label {
+  font-size: 15px;
+  color: gray;
+  margin-right: 3px;
+}
