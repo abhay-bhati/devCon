@@ -23,11 +23,22 @@
 }
 .singlepost__text {
   margin-top: 20px;
-  margin-left: 20px;
 }
-.singlepost__text__likes {
+.singlepost__ratings {
   display: flex;
   margin-top: 40px;
   align-items: center;
-  margin-left: 25px;
+}
+.singlepost__likes,
+.singlepost__dislikes {
+  display: flex;
+  justify-content: space-between;
+  margin: 0px 25px;
+  padding: 7px 13px;
+  background-color: darkgray;
+}
+.singlepost__likes__count,
+.singlepost__dislikes__count {
+  margin-left: 9px;
+  font-size: 12px;
 }

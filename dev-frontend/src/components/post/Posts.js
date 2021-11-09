@@ -6,10 +6,17 @@ function Posts() {
   const [isLoading, setIsLoading] = useState(true);
   const [posts, setPosts] = useState(null);
   const [handle, setHandle] = useState(null);
+  const [userId, setUserId] = useState(null);
 
   const newPostHandler = (value) => {
     console.log(value);
     setHandle(value);
+  };
+
+  const updateHandler = (value) => {
+    console.log("update handler");
+    console.log(value);
+    setHandle(value.post_id);
   };
 
   useEffect(() => {
@@ -27,6 +34,7 @@ function Posts() {
   }, [handle]);
   console.log("posts ll");
   console.log(posts);
+
   return (
     <>
       {isLoading && (
@@ -36,7 +44,11 @@ function Posts() {
         <div>
           <CreatePost new={newPostHandler} />
           {posts.map((element) => (
-            <SinglePost key={element._id} data={element} />
+            <SinglePost
+              key={element._id}
+              data={element}
+              update={updateHandler}
+            />
           ))}
         </div>
       )}

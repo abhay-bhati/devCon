@@ -23,18 +23,8 @@ router.get(
           console.log("2");
         }
       });
-    // Post.find({}).then((posts) => {
-    //   res.json(posts);
-    // });
   }
 );
-
-//     then((posts) => {
-//       console.log(posts);
-//       res.json(posts);
-//     });
-//   }
-// );
 
 // @route POST /api/post
 // @desc Create a new post
@@ -78,10 +68,10 @@ router.delete(
 // @desc Like or Dislike a post
 // @access PRIVATE
 router.get(
-  "/likes/:user_id/:post_id",
+  "/likes/:post_id",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
-    const user_id = req.params.user_id;
+    const user_id = req.user.id;
     console.log(user_id);
     console.log("121423");
     const post_id = req.params.post_id;
@@ -100,12 +90,15 @@ router.get(
         if (removeIndex >= 0) {
           post.likes.splice(removeIndex, 1);
           post.save().then(() => {
-            return res.json({ message: "post is unliked" });
+            return res.json({
+              message: "post is unliked",
+              user_id: req.user.id,
+            });
           });
         } else {
           post.likes.unshift(user_id);
           post.save().then(() => {
-            res.json("Liked post");
+            res.json({ message: "Liked post", user_id: req.user.id });
           });
         }
       });

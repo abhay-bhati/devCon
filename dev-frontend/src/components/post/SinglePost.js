@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "../../styles/SinglePost.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faThumbsUp } from "@fortawesome/free-solid-svg-icons";
@@ -6,6 +6,26 @@ import { faThumbsDown } from "@fortawesome/free-solid-svg-icons";
 
 function SinglePost(props) {
   console.log(props.data);
+  console.log(props.data.likes.length);
+  const likeClickHandler = () => {
+    console.log("like clkc");
+    console.log(props);
+    console.log(props.data.likes.length);
+    fetch(`http://localhost:8080/api/post/likes/${props.data._id}`, {
+      headers: { Authorization: localStorage.getItem("token") },
+    })
+      .then((res) => {
+        res.json().then((data) => {
+          console.log("123");
+          console.log(data);
+          props.update({ post_id: props.data._id, user_id: data.user_id });
+        });
+      })
+      .catch((err) => console.log(err));
+  };
+  const dislikeClickHandler = () => {
+    console.log("dislike click");
+  };
   return (
     <div className="singlepost">
       <div className="singlepost__image">
@@ -17,9 +37,25 @@ function SinglePost(props) {
       </div>
       <div className="singlepost__text">
         <p>{props.data.text}</p>
-        <div className="singlepost__text__likes">
-          <FontAwesomeIcon icon={faThumbsUp} style={{ marginRight: "80px" }} />
-          <FontAwesomeIcon icon={faThumbsDown} />
+        <div className="singlepost__ratings">
+          <div className="singlepost__likes">
+            <FontAwesomeIcon
+              icon={faThumbsUp}
+              onClick={likeClickHandler}
+              cursor="pointer"
+            />
+            <p className="singlepost__likes__count">
+              {props.data.likes.length}
+            </p>
+          </div>
+          <div className="singlepost__dislikes">
+            <FontAwesomeIcon
+              icon={faThumbsDown}
+              onClick={dislikeClickHandler}
+              cursor="pointer"
+            />
+            <p className="singlepost__dislikes__count">2</p>
+          </div>
         </div>
       </div>
     </div>
