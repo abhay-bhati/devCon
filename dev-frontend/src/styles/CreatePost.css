@@ -1,0 +1,16 @@
+.createpost {
+  padding: 30px;
+  width: 70%;
+  margin: 10px auto;
+  border: 1px solid gray;
+}
+.createpost__input {
+  margin-bottom: 20px;
+}
+.createpost__input input {
+  width: 98%;
+  height: 80px;
+  padding-left: 10px;
+}
+.createpost__input input::placeholder {
+}

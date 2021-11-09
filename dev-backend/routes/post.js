@@ -11,12 +11,30 @@ router.get(
   "/",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
-    Post.find({ user: req.user.id }).then((posts) => {
-      console.log(posts);
-      res.json(posts);
-    });
+    Post.find()
+      .sort({ date: "descending" })
+      .exec((err, docs) => {
+        if (err) {
+          console.log("1");
+          console.log(err);
+        } else {
+          console.log(docs);
+          res.json(docs);
+          console.log("2");
+        }
+      });
+    // Post.find({}).then((posts) => {
+    //   res.json(posts);
+    // });
   }
 );
+
+//     then((posts) => {
+//       console.log(posts);
+//       res.json(posts);
+//     });
+//   }
+// );
 
 // @route POST /api/post
 // @desc Create a new post

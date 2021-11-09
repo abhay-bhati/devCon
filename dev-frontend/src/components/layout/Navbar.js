@@ -52,6 +52,9 @@ function Navbar() {
           <Link to="/dashboard">
             <div>Dashboard</div>
           </Link>
+          <Link to="/posts">
+            <div>Post-Feed</div>
+          </Link>
           <button onClick={logoutHandler}>Logout</button>
           <div className="navbar__account__user">Hello, {AuthCtx.isUser}</div>
         </div>

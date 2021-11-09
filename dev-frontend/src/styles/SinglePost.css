@@ -1,0 +1,33 @@
+.singlepost {
+  display: flex;
+  background-color: gray;
+  width: 70%;
+  padding: 30px;
+  margin: 10px auto;
+}
+.singlepost__image img {
+  height: 100px;
+  width: 100px;
+  border-radius: 50px;
+  margin-bottom: 20px;
+}
+.singlepost__image {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-right: 50px;
+  margin-left: 20px;
+}
+.singlepost__image > p {
+}
+.singlepost__text {
+  margin-top: 20px;
+  margin-left: 20px;
+}
+.singlepost__text__likes {
+  display: flex;
+  margin-top: 40px;
+  align-items: center;
+  margin-left: 25px;
+}

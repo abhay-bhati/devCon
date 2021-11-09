@@ -11,6 +11,7 @@ import Education from "./components/dashboard/Education";
 import Experience from "./components/dashboard/Experience";
 import EditProfile from "./components/EditProfile";
 import MyProfile from "./components/MyProfile";
+import Posts from "./components/post/Posts";
 
 function App() {
   return (
@@ -47,6 +48,9 @@ function App() {
           </Route>
           <Route path="/my-profile">
             <MyProfile />
+          </Route>
+          <Route path="/posts">
+            <Posts />
           </Route>
         </Switch>
         <Footer />
